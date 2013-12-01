@@ -1,4 +1,4 @@
-<?php /*
+<?php /* 
 	//bdd local sous Wamp
 	try
 	{
