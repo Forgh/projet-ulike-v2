@@ -26,37 +26,10 @@
 			
 		});
 		</script>
-		<script src="scripts/script_checkform.js"></script>
-
-<title>Ulike : S'enregistrer</title>
-
-
-</head>
-	<body>
-		<?php
-			//ici on efface tous les elements de la session
-			$_SESSION['login_entreprise'] = null;
-			$_SESSION['pseudo_membre'] = null;
-		?>
-		<?php include("include/entete.php"); ?>
-
-		<div id="bodycentered">
-			<h2>Session</h2>
-			<p>Vous avez été bien déconnecté.</p>
-			<div class="bouton header">
-				<a href="index.php"> Accueil </a>
-			</div>
-		</div>
 		
-
-		<?php include("include/footer.php");?>
-
+		<script>
 		
-		
-	</body>
-	
-	<script type="text/javascript">
-		
+		$(document).ready(function(){
 	
 	$('#userCas').click( function() {
 		$('#infoUser').slideDown( "slow", function() {
@@ -97,5 +70,36 @@
 			// Animation complete.
 		});
 	};
+	});
 	</script>
+		<script src="scripts/script_checkform.js"></script>
+
+<title>Ulike : S'enregistrer</title>
+
+
+</head>
+	<body>
+		<?php
+			//ici on efface tous les elements de la session
+			$_SESSION['login_entreprise'] = null;
+			$_SESSION['pseudo_membre'] = null;
+		?>
+		<?php include("include/entete.php"); ?>
+
+		<div id="bodycentered">
+			<h2>Session</h2>
+			<p>Vous avez été bien déconnecté.</p>
+			<div class="bouton header">
+				<a href="index.php"> Accueil </a>
+			</div>
+		</div>
+		
+
+		<?php include("include/footer.php");?>
+
+		
+		
+	</body>
+	
+	
 </html>
