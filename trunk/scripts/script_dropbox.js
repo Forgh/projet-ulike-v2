@@ -62,7 +62,7 @@ $(function(){
                             '<div class="progress"></div>'+
                         '</div>'+
 						'<div id="descandname">'+
-							'<input type="hidden" name="nom_image" class="nom" form="cibleFormAjout" value="" >'+
+							'<input type="hidden" name="nom_image" class="nom" value="" >'+
 						'</div>'+	
                     '</div>'; 
 					

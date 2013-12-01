@@ -13,5 +13,5 @@
 				$nouvel_objet = new Objet($_POST['nom_objet'], $_SESSION['login_entreprise'],$_POST['categorie_objet'],$_POST['description'],$link_thumbnail);
 				$nouvel_objet->save();
 				
-				header( 'Location: http://projets-lightdark.fr/ulike/post_ajout_objet.php');
+				header( 'Location: http://projets-lightdark.fr/ulike/post_ajout_userinput.php');
 ?>
