@@ -86,6 +86,9 @@
 		<div class="">
 				<span class="validateObjet"><?php if(isset($error)) { if ($error) { echo $error['msg']; }} ?></span>
 		</div>
+		<?php 
+	}
+	?>	
 </div>
 		<?php include("include/footer.php");?>
 
@@ -96,9 +99,6 @@
         <script src="scripts/jquery.filedrop.js"></script>
               <!-- Le script principal de la dropbox -->
 		<script src="scripts/script_dropbox.js"></script>
-	<?php 
-	//}
-	?>	
+	
 </body>
 </html>
-
