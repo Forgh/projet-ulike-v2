@@ -109,6 +109,8 @@
 				<h2>Mon compte - <?php echo $_SESSION['login_entreprise']; ?></h2>
 				<p>Dans cet espace privée vous pouvez modifier vos informations concernant votre entreprise.</p>
 				<div class="bouton bleu" id="accueil2modif_btn">Modifier</div>
+				<p>Ajouter un objet:</p>
+				<div class="bouton bleu" id="ajout_objet">Ajouter objet</div>
 			</div>
 			<div id="modifs">
 				<h2>Mon compte - <?php echo $_SESSION['login_entreprise']; ?></h2>
@@ -206,6 +208,14 @@
 		//$('#info').hide();
 	});
 
+	$('#ajout_objet').click( function() {
+		$( "#bodycentered" ).fadeOut( "slow", function() {
+			// Animation complete.
+		});
+		//$('#info').hide();
+		document.location.href="ajout_objet.php";
+	});
+	
 	window.onload = function() {
 		 $( "#bodycentered" ).fadeIn( "slow", function() {
 			// Animation complete.
