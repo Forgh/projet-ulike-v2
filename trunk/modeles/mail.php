@@ -7,7 +7,7 @@ function envoyer_mail($expediteur, $destinataire, $sujet, $msg){
 	//echo $msg;
 	//if ($destinataire != "none@none.fr"){
 		mail($destinataire,$sujet,$msg,$headers);
-	/*}else{
+	/*else{
 		echo "<h2>Boite Mail de " . $destinataire . "</h1><br>";
 		echo "<b>From: </b>" . $expediteur . "<br>";
 		echo "<b>Sujet: </b>" . $sujet . "<br>";
