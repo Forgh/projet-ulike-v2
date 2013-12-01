@@ -26,16 +26,74 @@
 				
 			}else{
 				//Mdp incorrect
-				echo "Désolé mais le login ou le mot de passe est incorrect.²";
+				//echo "Désolé mais le login ou le mot de passe est incorrect.";
+				?>
+					<!DOCTYPE html>
+					<html>
+
+					<head>
+						<meta charset="utf-8">
+						<link rel="stylesheet" href="../css/style.css" type="text/css">
+					</head>
+					<body>
+						
+						<div id="bodycentered" >
+							<h2>Erreur d'informations</h2>
+							<p>Désolé mais le login ou le mot de passe est incorrect.</p>
+						</div>
+						
+					</body>
+					</html>
+				
+				<?php
 			}
 		}else{
 			//login incorrect
-			echo "Désolé mais le login ou le mot de passe est incorrect.[3]";
+			//echo "Désolé mais le login ou le mot de passe est incorrect.²";
+			?>
+					<!DOCTYPE html>
+					<html>
+
+					<head>
+						<meta charset="utf-8">
+						<link rel="stylesheet" href="../css/style.css" type="text/css">
+					</head>
+					<body>
+						
+						<div id="bodycentered" >
+							<h2>Erreur d'informations</h2>
+							<p>Désolé mais le login ou le mot de passe est incorrect.</p>
+						</div>
+						
+					</body>
+					</html>
+				
+				<?php
 		}
 	}else{
 		//login manquant
-		echo "Veuillez rentrer un pseudo.";
+		//echo "Veuillez rentrer un pseudo.";
+		?>
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" href="../css/style.css" type="text/css">
+			</head>
+			<body>
+				
+				<div id="bodycentered" >
+					<h2>Erreur d'informations</h2>
+					<p>Entrez un pseudo s'il vous plait.</p>
+				</div>
+				
+			</body>
+			</html>
+		
+		<?php
 	}
+
 	
 	
 ?>
