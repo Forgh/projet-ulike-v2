@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
-	<?php include("../include/entete.php"); ?>
+	
 	<div id="bodycentered" >
 		<h2>Etat de la validation</h2>
 		<?php
@@ -52,6 +52,6 @@
 		?>
 	</div>
 	
-	<?php include("../include/footer.php");?>
+	
 </body>
 </html>
