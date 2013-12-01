@@ -51,8 +51,8 @@
 				<h2>Authentification</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_membre.php" method="post" enctype="multipart/form-data" autocomplete="on">						
-						<label for="pseudo">Pseudonyme :<span class="obligatoire">*</span></label>
-						<input type="text" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
+						<label for="pseudonyme_input">Pseudonyme :<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudonyme_input" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
 						
 						
 						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
@@ -81,8 +81,8 @@
 				<h2>Informations confidentielles</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_entreprise.php" method="post" enctype="multipart/form-data" autocomplete="on">
-						<label for="pseudo">Nom de l'entreprise:<span class="obligatoire">*</span></label>
-						<input type="text" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
+						<label for="pseudonyme_input">Nom de l'entreprise:<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudonyme_input" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
 
 						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
 						<input type="password" title="Ne communiquez jamais votre mot de passe à quiconque." name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
@@ -117,7 +117,7 @@
 		
 	</body>
 	
-	<script type="text/javascript">
+	<script>
 		
 	
 	$('#userCas').click( function() {

@@ -180,7 +180,7 @@
 		
 	</body>
 	
-	<script type="text/javascript">
+	<script>
 		
 	
 	$('#userCas').click( function() {
