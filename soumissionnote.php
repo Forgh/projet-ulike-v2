@@ -50,13 +50,13 @@
 			<h2>Ajoutez votre note :</h2>
 			<form  action="controleurs/post_note.php" method="post" enctype="multipart/form-data">
 			
-				<p>
+				
 					<ul id="reserve_like" class="connectedList"> 
 						<li><input name="" type="hidden" value="Ergonomie"/><img src="imgs/ergo.png" alt="Ergonomie"/></li>
 						<li><input name="" type="hidden" value="Design"/><img src="imgs/design.png" alt="Design"/></li>
-						<li><input name="" type="hidden" value="Qualité-Prix"/><img src="imgs/qualite-prix.png" alt="Rapport Qualité/Prix"</li>
+						<li><input name="" type="hidden" value="Qualité-Prix"/><img src="imgs/qualite-prix.png" alt="Rapport Qualité/Prix"/></li>
 					</ul>
-				</p>
+				
 				
 				<div id="zoneenregistre">
 					<ul id="zonelike" class="connectedList"></ul>
