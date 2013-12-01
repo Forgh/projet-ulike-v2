@@ -2,7 +2,7 @@
 <html> 
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="css/style-ulike.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="scripts/jquery.qtip.min.js"></script>
 		<link rel="stylesheet" href="scripts/jquery.qtip.min.css" />
