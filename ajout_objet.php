@@ -42,8 +42,9 @@
 	}
 	else {
  ?>
- 	<div id="ajoutobjet">
-		<form method="POST" enctype="multipart/form-data" id="cibleFormAjout" action="controleurs/post_objet.php"  >
+		<form method="POST" enctype="multipart/form-data" id="cibleFormAjout" action="post_input_objet.php"  >
+		 	<div id="ajoutobjet">
+	
 			<p>	
 				<label for="nom_objet">Nom de votre objet :</label>	
 			</p>
@@ -73,8 +74,8 @@
 			<p>
 				<div id="dropbox">
 		    			<span class="message"> Veuillez glisser-déposer ici l'image de votre objet...</span>
-        			</div>
-        		</p>
+        		</div>
+        	</p>
 			<p>
 				<div class="msgObligatoire">Tout les champs sont obligatoires.</div>
 			</p>
@@ -83,9 +84,7 @@
 			</p>
 		</form>
 		
-		<div class="">
-				<span class="validateObjet"><?php if(isset($error)) { if ($error) { echo $error['msg']; }} ?></span>
-		</div>
+	
 		<?php 
 	}
 	?>	
