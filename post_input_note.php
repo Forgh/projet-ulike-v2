@@ -11,8 +11,8 @@
 		<?php include("include/entete.php"); ?>
 		<?php include("controleurs/post_note.php"); ?>
 		<div id="bodycentered" >
-			<h2>Opération réussie.</h2>
-			<p>Votre Like/Dislike a bien été ajouté.</p>
+			<h2>OpÃ©ration rÃ©ussie.</h2>
+			<p>Votre Like/Dislike a bien Ã©tÃ© ajoutÃ©.</p>
 		</div>
 				<?php include("include/footer.php"); ?>
 
