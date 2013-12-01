@@ -1,5 +1,5 @@
 <header>
-	<img id="logo" src="imgs/logos_ulike_small.png" />
+	<a href="index.php" ><img id="logo" src="imgs/logos_ulike_small.png" /></a>
 <div id="search">
 		<form method="GET" name="form-test" id="form-test" action="search_results.php" enctype="multipart/form-data" >
 		  	<input type="search" id="champ-texte" name="search" placeholder="Rechercher..." >
