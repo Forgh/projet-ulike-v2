@@ -72,7 +72,7 @@
 					<textarea id="commentaire" name="commentaire" placeholder="Quelque chose à rajouter ? Ajoutez ici votre commentaire !"></textarea>
 				</p>
 				</div>
-					
+					<input type="hidden" name="nom_objet" value="<?php echo $_POST['nom_objet']; ?>">
 				<p>
 					<input class="center" type="submit" value="Envoyer"/>
 				</p>
