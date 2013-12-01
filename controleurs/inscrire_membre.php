@@ -42,6 +42,7 @@
 
 			<head>
 				<meta charset="utf-8">
+				<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/ulike/" >
 				<link rel="stylesheet" href="../css/style.css" type="text/css">
 			</head>
 			<body>
