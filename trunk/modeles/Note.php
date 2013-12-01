@@ -49,18 +49,22 @@
 		public function fetchNotesByObjet($nom){
 			global $bdd;
 			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? ORDER BY id_note DESC');
-			$req = $bdd->execute(array($nom));
+			$req ->execute(array($nom));
 			
 			return $req->fetchAll();
 		}
 		
 		public function existeNotesByObjetAndPseudo($nom,$pseudo){
 			global $bdd;
-			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? AND pseudo_auteur=?');
-			$req = $bdd->execute(array($nom,$pseudo));
+			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? AND pseudo_auteur = ?');
+			$req ->execute(array($nom,$pseudo));
 			$ret = $req->fetchAll();
-			
-			return(count($ret)>0);
+			if (count($ret)==0) {
+			return true;
+			}
+			else {
+			return false;
+			}
 		}
 
 	}

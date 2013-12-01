@@ -1,11 +1,9 @@
 <?php
-if(isset($_GET['objet'])){
-	//$nom_objet=str_replace('_',' ',$_GET['objet']); 
-	 
+ 
 	$id = $_GET['objet'];
-	require('modeles/Objet.php');
-	require('modeles/Note.php');
-	require('modeles/Like.php');
+	include('modeles/Objet.php');
+	include('modeles/Note.php');
+	include('modeles/Like.php');
 	
 	$carac_objet=Objet::getObjetById($id);
 	
@@ -29,9 +27,5 @@ if(isset($_GET['objet'])){
 	
 	$total_like=$design_like+$ergonomie_like+$qualite_like;
 	$total_dislike=$design_dislike+$ergonomie_dislike+$qualite_dislike;
-	}
-else {
-	echo '<p> Cet objet n\'existe pas !<p>';
-}
 
 ?>
