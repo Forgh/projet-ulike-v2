@@ -38,7 +38,10 @@
 			<div class="accueilDroite">
 				<?php include('controleurs/highlight_objet.php');?>
 			</div>	
-		
+			
+			<div >
+				<div class="msgObligatoire">IMPORTANT : afin de profiter des fonctions offertes par le site, veuillez activer Javascript</div>
+			</div>
 		</div>
 		<?php include("include/footer.php");?>
 				

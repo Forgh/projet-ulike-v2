@@ -37,16 +37,16 @@
 					$activation = sha1($GRAINE . "MEM" . $_POST["login_validation"]);
 					if ($_GET["id"] == $activation){
 						$Ent->setConfirmed();
-						echo "L'activation a réussie.";
+						echo "<p>L'activation a réussie.</p>";
 					}else{
 						//PAGE code invalide (ici le login est inexistant)
-						echo "L'activation a échoué: veuillez entrer des informations valide. [mem]";
+						echo "<p>L'activation a échoué: veuillez entrer des informations valide. [mem]</p>";
 					}
 					
 				
 				}else{
 					//PAGE activation echoue (ici c'est possible que le login soit inexistant)
-					echo "L'activation a échoué: veuillez entrer des informations valide. [compte inconnu]";
+					echo "<p>L'activation a échoué: veuillez entrer des informations valide. [compte inconnu]</p>";
 				}
 			}
 		?>

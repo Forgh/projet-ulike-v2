@@ -35,7 +35,26 @@
 		$msg = 'Cliquez sur le lien pour activer votre compte:  <a href="' . $url .'">' . $url .'</a><br>';	
 		envoyer_mail($MAIL_ACTIVATION,$Ent->getEmail(), "Activation de votre compte", $msg );
 		
-		echo "Veuillez utiliser le mail d'activation pour continuer.";
+		//echo "Veuillez utiliser le mail d'activation pour continuer.";
+		?>
+			<!DOCTYPE html>
+			<html>
+
+			<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" href="../css/style.css" type="text/css">
+			</head>
+			<body>
+				
+				<div id="bodycentered" >
+					<h2>Etape suivante</h2>
+					<p>Veuillez utiliser le mail d'activation pour continuer.</p>
+				</div>
+				
+			</body>
+			</html>
+		
+		<?php
 	}
 	
 
