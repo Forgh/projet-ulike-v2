@@ -4,14 +4,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="5;url=<?php echo $SITE_BASE; ?>login.php" >
+	<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/login.php" >
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	
 	<div id="bodycentered" >
 		<?php
-			if(isset($_SESSION['login_err'])){
+			if(!empty($_SESSION['login_err'])){
 		?>
 			<h2><?php echo $_SESSION['login_err']; ?></h2>
 			<p><?php echo $_SESSION['login_err_msg']; ?></p>
