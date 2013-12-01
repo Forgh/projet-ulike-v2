@@ -22,18 +22,18 @@
 		
 		public function getId(){
 			global $bdd;
-			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes");
+			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes") or die("Erreur => MAX Note.construct($id)");
 			$result = $idmax -> fetch();
 			$ret = $result[0];
 			return $ret;
 		}
 
 		public function __construct ($pseudo, $commentaire, $objet) {
-				 
-			$this->pseudo = $pseudo;
-			$this->commentaire = $commentaire;
-			$this->objet = $objet;
-		}
+            global $bdd;
+            $this->pseudo = $pseudo;
+            $this->commentaire = $commentaire;
+            $this->objet = $objet;
+        }
 
 		public function save() {
 				global $bdd;
