@@ -66,6 +66,7 @@ $( "#otherMarks" ).slideDown( "slow", function() {
 		?>
 	</ul>
 </div>
+<?php include('controleurs/verif_existe_note.php'); ?>
 			<p>			
 			<div class="msgbox_btn_box">
 				<div class="bouton bleu" id="userCas">En voir [+]</div>

@@ -54,6 +54,14 @@
 			return $req->fetchAll();
 		}
 		
+		public function existeNotesByObjetAndPseudo($nom,$pseudo){
+			global $bdd;
+			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? AND pseudo_auteur=?');
+			$req = $bdd->execute(array($nom,$pseudo));
+			$ret = $req->fetchAll();
+			
+			return(count($ret)>0);
+		}
 
 	}
 
