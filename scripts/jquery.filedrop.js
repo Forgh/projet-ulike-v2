@@ -34,7 +34,7 @@
       paramname: 'userfile',
       allowedfiletypes:[],
       maxfiles: 1, // Ignored if queuefiles is set > 0
-      maxfilesize: 1, // MB file size limit
+      maxfilesize: 2, // MB file size limit
       queuefiles: 0, // Max files before queueing (for large volume uploads)
       queuewait: 200, // Queue wait time if full
       data: {},
