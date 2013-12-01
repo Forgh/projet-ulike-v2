@@ -16,102 +16,43 @@
 				$_SESSION['pseudo_membre'] = $_POST['pseudo'];
 				//ok
 				//echo "ok, vous êtes bien logué";
-				header("Location: ". $SITE_BASE . "moncompte.php");
+				header("Location: ". $SITE_BASE . "post_ajout_userinput.php");
 			}elseif ($Ent->isEmailConfirmed() == false){ 
 				//activation
 				//echo "Vous devez d'abord activez votre compte. Un mail vient de vous être envoyé.";
 				
-				?>
-					<!DOCTYPE html>
-					<html>
-
-					<head>
-						<meta charset="utf-8">
-						<link rel="stylesheet" href="../css/style.css" type="text/css">
-					</head>
-					<body>
-						
-						<div id="bodycentered" >
-							<h2>Compte non activé</h2>
-							<p>Vous devez d'abord activez votre compte. Un mail vient de vous être envoyé.</p>
-						</div>
-						
-					</body>
-					</html>
-				
-				<?php
 				/* MAIL */
 				include("../modeles/mail.php");
 				mail_activation_membre( $Ent );
 				
+				$_POST['login_err']  = "Erreur d'activation";
+				$_POST['login_err_msg'] = "Vous devez d'abord activez votre compte. Un mail vient de vous être envoyé.";
+				
+				header("Location: ". $SITE_BASE . "erreur_login.php");
+				
 			}else{
 				//Mdp incorrect
 				//echo "Désolé mais le login ou le mot de passe est incorrect.";
-				?>
-					<!DOCTYPE html>
-					<html>
-
-					<head>
-						<meta charset="utf-8">
-						<link rel="stylesheet" href="../css/style.css" type="text/css">
-					</head>
-					<body>
-						
-						<div id="bodycentered" >
-							<h2>Erreur d'informations</h2>
-							<p>Désolé mais le login ou le mot de passe est incorrect.</p>
-						</div>
-						
-					</body>
-					</html>
+				$_POST['login_err']  = "Erreur de connexion";
+				$_POST['login_err_msg'] = "Désolé mais le login ou le mot de passe est incorrect.";
 				
-				<?php
+				header("Location: ". $SITE_BASE . "erreur_login.php");
 			}
 		}else{
 			//login incorrect
 			//echo "Désolé mais le login ou le mot de passe est incorrect.²";
-			?>
-					<!DOCTYPE html>
-					<html>
-
-					<head>
-						<meta charset="utf-8">
-						<link rel="stylesheet" href="../css/style.css" type="text/css">
-					</head>
-					<body>
-						
-						<div id="bodycentered" >
-							<h2>Erreur d'informations</h2>
-							<p>Désolé mais le login ou le mot de passe est incorrect.</p>
-						</div>
-						
-					</body>
-					</html>
-				
-				<?php
+			$_POST['login_err']  = "Erreur de connexion";
+			$_POST['login_err_msg'] = "Désolé mais le login ou le mot de passe est incorrect.";
+			
+			header("Location: ". $SITE_BASE . "erreur_login.php");
 		}
 	}else{
 		//login manquant
 		//echo "Veuillez rentrer un pseudo.";
-		?>
-			<!DOCTYPE html>
-			<html>
-
-			<head>
-				<meta charset="utf-8">
-				<link rel="stylesheet" href="../css/style.css" type="text/css">
-			</head>
-			<body>
-				
-				<div id="bodycentered" >
-					<h2>Erreur d'informations</h2>
-					<p>Entrez un pseudo s'il vous plait.</p>
-				</div>
-				
-			</body>
-			</html>
+		$_POST['login_err']  = "Erreur de connexion";
+		$_POST['login_err_msg'] = "Veuillez entrer un login.";
 		
-		<?php
+		header("Location: ". $SITE_BASE . "erreur_login.php");
 	}
 
 	
