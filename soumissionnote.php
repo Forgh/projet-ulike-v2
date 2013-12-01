@@ -48,6 +48,7 @@
 		<?php include("include/entete.php"); ?>
 		<div id="bodycentered" >
 			<h2>Ajoutez votre note :</h2>
+			<?php if (isset($_SESSION['pseudo_membre'])){ ?>
 			<form  action="controleurs/post_note.php" method="post" enctype="multipart/form-data">
 			
 				
@@ -76,6 +77,11 @@
 				</p>
 		
 			</form>
+			<?php
+			} else {
+				echo '<p>Désolé, vous ne pouvez soumettre de note si vous êtes une entreprise ou un simple visiteur ! </p>';
+			}
+			?>
 		</div>
 		
 		<?php include("include/footer.php"); ?>

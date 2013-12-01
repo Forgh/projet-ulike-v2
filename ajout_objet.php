@@ -38,7 +38,7 @@
 
  <?php
 	if (!isset($_SESSION['login_entreprise'])){
-		echo "Désolé vous ne pouvez pas ajouter d'objet sans être logué.";
+		echo "Désolé, cette parti n'est réservé qu'aux entreprise enregistrées.";
 	}
 	else {
  ?>
