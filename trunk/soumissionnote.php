@@ -50,7 +50,7 @@
 		<div id="bodycentered" >
 			<h2>Ajoutez votre note :</h2>
 			<?php if (isset($_SESSION['pseudo_membre'])){ ?>
-			<form  action="controleurs/post_input_note.php" method="post" enctype="multipart/form-data">
+			<form  action="post_input_note.php" method="post" enctype="multipart/form-data">
 			
 				
 					<ul id="reserve_like" class="connectedList"> 
