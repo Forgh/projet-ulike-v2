@@ -16,10 +16,13 @@
 				$_SESSION['login_entreprise'] = $_POST['pseudo'];
 				//ok
 				//echo "ok, vous êtes bien logué";
+			
+				
+				header("Location: ". $SITE_BASE . "moncompte.php");
+			}elseif (!$Ent->isEmailConfirmed()){
 				/* MAIL */
 				include("../modeles/mail.php");
 				mail_activation_membre( $Ent );
-				
 				header("Location: ". $SITE_BASE . "erreur_login.php");
 				
 			}else{
