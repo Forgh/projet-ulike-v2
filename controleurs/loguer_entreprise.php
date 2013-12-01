@@ -4,7 +4,8 @@
 	include("../include/commun.php");
 	include("../modeles/Entreprise.php");
 		
-		
+	
+	// pour l'affichage des types d'erreurs voir révision 35
 	if(isset($_POST['pseudo'])){
 		$Ent = Entreprise::getEntrepriseParNom($_POST['pseudo']);
 		
@@ -19,32 +20,20 @@
 				include("../modeles/mail.php");
 				mail_activation_membre( $Ent );
 				
-				/*$_SESSION['login_err']  = "Erreur d'activation";
-				$_SESSION['login_err_msg'] = "Vous devez d'abord activez votre compte. Un mail vient de vous être envoyé.";*/
-				
 				header("Location: ". $SITE_BASE . "erreur_login.php");
 				
 			}else{
 				//Mdp incorrect
-				//echo "Désolé mais le login ou le mot de passe est incorrect.";
-				/*$_SESSION['login_err']  = "Erreur de connexion";
-				$_SESSION['login_err_msg'] = "Désolé mais le login ou le mot de passe est incorrect.";*/
 				
 				header("Location: ". $SITE_BASE . "erreur_login.php");
 			}
 		}else{
 			//login incorrect
-			//echo "Désolé mais le login ou le mot de passe est incorrect.²";
-			/*$_SESSION['login_err']  = "Erreur de connexion";
-			$_SESSION['login_err_msg'] = "Désolé mais le login ou le mot de passe est incorrect.";*/
 			
 			header("Location: ". $SITE_BASE . "erreur_login.php");
 		}
 	}else{
 		//login manquant
-		//echo "Veuillez rentrer un pseudo.";
-		/*$_SESSION['login_err']  = "Erreur de connexion";
-		$_SESSION['login_err_msg'] = "Veuillez entrer un login.";*/
 		
 		header("Location: ". $SITE_BASE . "erreur_login.php");
 	}
