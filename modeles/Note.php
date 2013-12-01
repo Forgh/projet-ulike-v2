@@ -22,7 +22,7 @@
 		
 		public function getId(){
 			global $bdd;
-			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes") or die("Erreur => MAX Note.construct($id)");
+			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes");
 			$result = $idmax -> fetch();
 			$ret = $result[0];
 			return $ret;
@@ -42,7 +42,7 @@
 								'nom_objet_source'=>$this->objet,
 								'commentaire' => $this->commentaire, 
 								'pseudo_auteur' => $this->pseudo, 
-								))or die ("Erreur => Note.save()");
+								));
 				
 		}
 		
