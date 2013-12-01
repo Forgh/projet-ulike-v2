@@ -5,14 +5,14 @@ function envoyer_mail($expediteur, $destinataire, $sujet, $msg){
 "Reply-To: " . $expediteur . "\r\n" .
 "X-Mailer: PHP/" . phpversion();
 	//echo $msg;
-	if ($destinataire != "none@none.fr"){
+	//if ($destinataire != "none@none.fr"){
 		mail($destinataire,$sujet,$msg,$headers);
-	}else{
+	/*}else{
 		echo "<h2>Boite Mail de " . $destinataire . "</h1><br>";
 		echo "<b>From: </b>" . $expediteur . "<br>";
 		echo "<b>Sujet: </b>" . $sujet . "<br>";
 		echo "<b>Message:</b><br>" . $msg . "<br>";
-	}
+	}*/
 
 }
 
