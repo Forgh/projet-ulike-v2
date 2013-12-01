@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="css/style.css" />
-			   <link rel="stylesheet" href="css/css-drag.css" />
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css" >
+			   <link rel="stylesheet" href="css/css-drag.css" >
 		<script type="text/javascript" src="scripts/jquery.js"></script>
-		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 
 		<script>
@@ -50,7 +50,7 @@
 		<div id="bodycentered" >
 			<h2>Ajoutez votre note :</h2>
 			<?php if (isset($_SESSION['pseudo_membre'])){ ?>
-			<form  action="controleurs/post_note.php" method="post" enctype="multipart/form-data">
+			<form  action="controleurs/post_input_note.php" method="post" enctype="multipart/form-data">
 			
 				
 					<ul id="reserve_like" class="connectedList"> 
