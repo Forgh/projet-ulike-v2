@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/> 
+		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="css/style.css" />
 		<title> ULike </title>
 	</head>
@@ -28,7 +28,7 @@
 					<img src="css/design/like.png" alt="likes"/>
 						<p class="likesNumber"><?php echo $number_likes; ?></p>
 						<p class="space"></p>
-						<p class="dislikesNumber"><?php echo $number_dislikes; ?></p><img src="css/design/dislike.png"/>
+						<p class="dislikesNumber"><?php echo $number_dislikes; ?></p><img src="css/design/dislike.png" alt="dislike"/>
 				</div>
 				<p><span class="presentationObjetLbl">Nom:</span><span class="presentationObjetNom"><?php echo $constructeur_objet; ?> - <?php echo $nom_objet; ?></span></p>
 				<p><span class="presentationObjetLbl">Categorie:</span><?php echo $categorie_objet; ?></p>
@@ -37,8 +37,9 @@
 			
 			<div class="accueilDroite">
 				<?php include('controleurs/highlight_objet.php');?>
-		</div>	
+			</div>	
 		
+		</div>
 		<?php include("include/footer.php");?>
 				
 	</body>
