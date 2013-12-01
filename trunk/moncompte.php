@@ -26,6 +26,47 @@
 			
 		});
 		</script>
+		<script>
+		
+	$(document).ready(function()
+		{
+	$('#modifs_btn').click( function() {
+		$('#accueil').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#modifs').slideUp( "slow", function() {
+			
+		// Animation complete.
+		});
+		//$('#categorie').hide();
+	});
+	
+	$('#accueil2modif_btn').click( function() {
+		$('#modifs').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#accueil').slideUp( "slow", function() {
+		// Animation complete.
+		});
+		 
+		//$('#info').hide();
+	});
+
+	$('#ajout_objet').click( function() {
+		$( "#bodycentered" ).fadeOut( "slow", function() {
+			// Animation complete.
+		});
+		//$('#info').hide();
+		document.location.href="ajout_objet.php";
+	});
+	
+	window.onload = function() {
+		 $( "#bodycentered" ).fadeIn( "slow", function() {
+			// Animation complete.
+		});
+	};
+	});
+	</script>
 		<script src="scripts/script_checkform.js"></script>
 
 <title>Ulike : S'enregistrer</title>
@@ -183,43 +224,5 @@
 		
 	</body>
 	
-	<script type="text/javascript">
-		
 	
-	$('#modifs_btn').click( function() {
-		$('#accueil').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#modifs').slideUp( "slow", function() {
-			
-		// Animation complete.
-		});
-		//$('#categorie').hide();
-	});
-	
-	$('#accueil2modif_btn').click( function() {
-		$('#modifs').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#accueil').slideUp( "slow", function() {
-		// Animation complete.
-		});
-		 
-		//$('#info').hide();
-	});
-
-	$('#ajout_objet').click( function() {
-		$( "#bodycentered" ).fadeOut( "slow", function() {
-			// Animation complete.
-		});
-		//$('#info').hide();
-		document.location.href="ajout_objet.php";
-	});
-	
-	window.onload = function() {
-		 $( "#bodycentered" ).fadeIn( "slow", function() {
-			// Animation complete.
-		});
-	};
-	</script>
 </html>
