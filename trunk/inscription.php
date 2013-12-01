@@ -27,8 +27,8 @@
 		});
 		</script>
 		<script>
-		
-	
+	$(document).ready(function()
+		{
 	$('#userCas').click( function() {
 		$('#infoUser').slideDown( "slow", function() {
 		// Animation complete.
@@ -68,6 +68,8 @@
 			// Animation complete.
 		});
 	};
+			});
+
 	</script>
 		<script src="scripts/script_checkform.js"></script>
 
