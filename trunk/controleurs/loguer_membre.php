@@ -37,6 +37,7 @@
 		//login manquant
 		echo "Veuillez rentrer un pseudo.";
 	}
+
 	
 	
 ?>
