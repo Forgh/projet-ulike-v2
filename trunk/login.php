@@ -2,12 +2,12 @@
 <!DOCTYPE html> 
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 		<script type="text/javascript" src="scripts/jquery.js"></script>
-		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
 		<script src="scripts/jquery.qtip.min.js"></script>
-		<link rel="stylesheet" href="scripts/jquery.qtip.min.css" />
+		<link rel="stylesheet" href="scripts/jquery.qtip.min.css">
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 		<script>
 		$(document).ready(function()
@@ -100,8 +100,8 @@
 						<input type="text" id="pseudonyme_membre" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
 						
 						
-						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Votre mot de passe ne doit jamais être communiqué à une personne tiers." name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<label for="passwd_membre">Mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" title="Votre mot de passe ne doit jamais être communiqué à une personne tiers." name="passwd" id="passwd_membre" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
 						
 						
 						<div class="msgObligatoire">Les champs notés avec un astérique rouge sont obligatoires.</div>
@@ -129,8 +129,8 @@
 						<label for="pseudonyme_entreprise">Nom de l'entreprise:<span class="obligatoire">*</span></label>
 						<input type="text" id="pseudonyme_entreprise" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
 
-						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Ne communiquez jamais votre mot de passe à quiconque." name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<label for="passwd_entreprise">Mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" title="Ne communiquez jamais votre mot de passe à quiconque." name="passwd" id="passwd_entreprise" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
 						
 						<div class="msgObligatoire">Les champs notés avec un astérique rouge sont obligatoires.</div>
 

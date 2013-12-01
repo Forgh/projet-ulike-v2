@@ -26,6 +26,49 @@
 			
 		});
 		</script>
+		<script>
+		
+	
+	$('#userCas').click( function() {
+		$('#infoUser').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#categorie').slideUp( "slow", function() {
+			
+		// Animation complete.
+		});
+		//$('#categorie').hide();
+	});
+	
+	$('#entrepriseCas').click( function() {
+		$('#infoEntreprise').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#categorie').slideUp( "slow", function() {
+		// Animation complete.
+		});
+		
+		//$('#info').hide();
+	});
+
+	$('#accueil').click( function() {
+		 $( "#bodycentered" ).fadeOut( "slow", function() {
+			// Animation complete.
+			document.location.href="accueil.php";
+			//???
+			$( "#bodycentered" ).fadeIn( "slow", function() {
+			});
+		});
+		
+		//$('#categorie').hide();
+	});
+
+	window.onload = function() {
+		 $( "#bodycentered" ).fadeIn( "slow", function() {
+			// Animation complete.
+		});
+	};
+	</script>
 		<script src="scripts/script_checkform.js"></script>
 
 <title>Ulike : S'enregistrer</title>
@@ -51,18 +94,18 @@
 				<h2>Informations personnelles</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/inscrire_membre.php" method="post" enctype="multipart/form-data" autocomplete="on">						
-						<label for="pseudo">Pseudonyme :<span class="obligatoire">*</span></label>
-						<input type="text" name="pseudo" title="Sera affiché sur vos commentaires. <br> Retenez-le, il servira à vous authentifier" class="pseudo"<?php if (isset($_SESSION['ajout_membre.pseudo']))
+						<label for="pseudo_membre">Pseudonyme :<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudo_membre" name="pseudo" title="Sera affiché sur vos commentaires. <br> Retenez-le, il servira à vous authentifier" class="pseudo"<?php if (isset($_SESSION['ajout_membre.pseudo']))
 																echo ' value="' . $_SESSION['ajout_membre.pseudo'] .'"'; ?>>
 						
 						
-						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Votre mot de passe doit comporter au moins : <br>- 1 majuscule,<br>- 1 minuscule, <br>- 1 chiffre" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
-						<label for="passwdconfirm">Confirmez le mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Doit être identique à celui ci-dessus" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Veuillez entrer un mot de passe identique à celui ci-dessus' : ''); " name="passwdconfirm" class="passwdconfirm">
+						<label for="passwd_membre">Mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" title="Votre mot de passe doit comporter au moins : <br>- 1 majuscule,<br>- 1 minuscule, <br>- 1 chiffre" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="passwd" id="passwd_membre" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<label for="passwdconfirm_membre">Confirmez le mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" id="passwdconfirm_membre" title="Doit être identique à celui ci-dessus" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Veuillez entrer un mot de passe identique à celui ci-dessus' : ''); " name="passwdconfirm" class="passwdconfirm">
 
-						<label for="mail">Email :<span class="obligatoire">*</span></label>
-						<input type="email" title="Doit être de la forme :<br>nom@domain.zone" name="mail" class="email"<?php if (isset($_SESSION['ajout_membre.mail']))
+						<label for="mail_membre">Email :<span class="obligatoire">*</span></label>
+						<input type="email" id="mail_membre" title="Doit être de la forme :<br>nom@domain.zone" name="mail" class="email"<?php if (isset($_SESSION['ajout_membre.mail']))
 																echo ' value="' . $_SESSION['ajout_membre.mail'] .'"'; ?>>
 						
 						<label for="nom">Nom :</label>
@@ -116,17 +159,17 @@
 				<h2>Informations confidentielles</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/inscrire_entreprise.php" method="post" enctype="multipart/form-data" autocomplete="on">
-						<label for="pseudo">Nom de l'entreprise:<span class="obligatoire">*</span></label>
-						<input type="text" title="Sera affiché sur la description de vos objets <br> Retenez-le, il servira à vous authentifier" required name="pseudo" class="pseudo"<?php if (isset($_SESSION['ajout_ent.nom_ent']))
+						<label for="pseudo_entreprise">Nom de l'entreprise:<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudo_entreprise" title="Sera affiché sur la description de vos objets <br> Retenez-le, il servira à vous authentifier" required name="pseudo" class="pseudo"<?php if (isset($_SESSION['ajout_ent.nom_ent']))
 																echo ' value="' . $_SESSION['ajout_ent.nom_ent'] .'"'; ?>>
 
-						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Votre mot de passe doit comporter au moins : <br>- 1 majuscule,<br>- 1 minuscule, <br>- 1 chiffre" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
-						<label for="passwdconfirm">Confirmez le mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Doit être identique à celui ci-dessus" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Veuillez entrer un mot de passe identique à celui ci-dessus' : ''); " name="passwdconfirm" class="passwdconfirm">
+						<label for="passwd_entreprise">Mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" title="Votre mot de passe doit comporter au moins : <br>- 1 majuscule,<br>- 1 minuscule, <br>- 1 chiffre" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="passwd" id="passwd_entreprise" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<label for="passwdconfirm_entreprise">Confirmez le mot de passe :<span class="obligatoire">*</span></label>
+						<input type="password" id="passwdconfirm_entreprise" title="Doit être identique à celui ci-dessus" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Veuillez entrer un mot de passe identique à celui ci-dessus' : ''); " name="passwdconfirm" class="passwdconfirm">
 
-						<label for="mail">Email :<span class="obligatoire">*</span></label>
-						<input type="email" title="Doit être de la forme :<br>nom@domain.zone" name="mail_ent" class="email" <?php if (isset($_SESSION['ajout_ent.mail_ent']))
+						<label for="mail_entreprise">Email :<span class="obligatoire">*</span></label>
+						<input type="email" id="mail_entreprise" title="Doit être de la forme :<br>nom@domain.zone" name="mail_ent" class="email" <?php if (isset($_SESSION['ajout_ent.mail_ent']))
 																echo ' value="' . $_SESSION['ajout_ent.mail_ent'] .'"'; ?>>
 						
 						<label for="siren">N° SIREN:<span class="obligatoire">*</span></label>
@@ -180,47 +223,5 @@
 		
 	</body>
 	
-	<script>
-		
 	
-	$('#userCas').click( function() {
-		$('#infoUser').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#categorie').slideUp( "slow", function() {
-			
-		// Animation complete.
-		});
-		//$('#categorie').hide();
-	});
-	
-	$('#entrepriseCas').click( function() {
-		$('#infoEntreprise').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#categorie').slideUp( "slow", function() {
-		// Animation complete.
-		});
-		
-		//$('#info').hide();
-	});
-
-	$('#accueil').click( function() {
-		 $( "#bodycentered" ).fadeOut( "slow", function() {
-			// Animation complete.
-			document.location.href="accueil.php";
-			//???
-			$( "#bodycentered" ).fadeIn( "slow", function() {
-			});
-		});
-		
-		//$('#categorie').hide();
-	});
-
-	window.onload = function() {
-		 $( "#bodycentered" ).fadeIn( "slow", function() {
-			// Animation complete.
-		});
-	};
-	</script>
 </html>
