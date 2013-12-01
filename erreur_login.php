@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="refresh" content="5;url=<?php echo $SITE_BASE ?>login.php" >
-	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	
