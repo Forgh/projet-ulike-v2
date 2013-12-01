@@ -1,16 +1,14 @@
 <?php
 	session_start();
-	echo 'session';
 	include('../modeles/Note.php');
-	echo 'note';
 	include('../modeles/Like.php');
-	echo 'like';
 
-	$note = new Note($_SESSION['pseudo_membre'],$_POST['commentaire'], );
+	$nom_objet= $_POST['nom_objet'];
+	$note = new Note($_SESSION['pseudo_membre'],$_POST['commentaire'],$nom_objet);
 	
 	$note->save();
 	
-	$id_auteur = $note->getId();
+	$id_auteur = Note::getId();
 	
 	foreach($_POST['likes'] as $key=>$value){
 		$like = new Like($value, $id_auteur, 1);

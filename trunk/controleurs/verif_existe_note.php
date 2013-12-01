@@ -4,9 +4,13 @@
 	
 	$condition = Note::existeNotesByObjetAndPseudo($nom_objet,$pseudo);
 	
-	if($condition) {
-		echo '<div class="msgbox_btn_box">
-						<a href="soumissionnote.php"><div class="bouton bleu" id="userCas">Ajouter une note</div></a>
-					</div>';
+	if($condition) {?>
+	<div class="msgbox_btn_box">
+				<form  action="soumissionnote.php" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="nom_objet" value="<?php echo $nom_objet; ?>" >
+						<input type="submit" value="Ajouter votre Like">
+				</form>
+	</div>
+	<?php
 	}
 ?>
