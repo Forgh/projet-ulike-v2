@@ -6,26 +6,9 @@
 <link rel="stylesheet" href="css/style.css" type="text/css">
 		<script type="text/javascript" src="scripts/jquery.js"></script>
 		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-		<script src="scripts/jquery.qtip.min.js"></script>
-		<link rel="stylesheet" href="scripts/jquery.qtip.min.css">
+
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
-		<script>
-		$(document).ready(function()
-		{
-			$('[title!=""]').qtip(
-			{
-				position: {
-					my:'center left',
-					at:'center right',
-				},
-				style : {
-					classes: 'qtip-bootstrap'
-				}
-				
-			});
-			
-		});
-		</script>
+		
 			<script>
 		
 	$(document).ready(function()
@@ -71,7 +54,6 @@
 	};
 	});
 	</script>
-		<script src="scripts/script_checkform.js"></script>
 
 <title>Ulike : Se connecter</title>
 
@@ -97,11 +79,11 @@
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_membre.php" method="post" enctype="multipart/form-data" autocomplete="on">						
 						<label for="pseudonyme_membre">Pseudonyme :<span class="obligatoire">*</span></label>
-						<input type="text" id="pseudonyme_membre" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
+						<input type="text" id="pseudonyme_membre" name="pseudo"  class="pseudo">
 						
 						
 						<label for="passwd_membre">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Votre mot de passe ne doit jamais être communiqué à une personne tiers." name="passwd" id="passwd_membre" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<input type="password" name="passwd" id="passwd_membre" >
 						
 						
 						<div class="msgObligatoire">Les champs notés avec un astérique rouge sont obligatoires.</div>
@@ -127,10 +109,10 @@
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_entreprise.php" method="post" enctype="multipart/form-data" autocomplete="on">
 						<label for="pseudonyme_entreprise">Nom de l'entreprise:<span class="obligatoire">*</span></label>
-						<input type="text" id="pseudonyme_entreprise" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
+						<input type="text" id="pseudonyme_entreprise" required name="pseudo" class="pseudo">
 
 						<label for="passwd_entreprise">Mot de passe :<span class="obligatoire">*</span></label>
-						<input type="password" title="Ne communiquez jamais votre mot de passe à quiconque." name="passwd" id="passwd_entreprise" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
+						<input type="password" name="passwd" id="passwd_entreprise">
 						
 						<div class="msgObligatoire">Les champs notés avec un astérique rouge sont obligatoires.</div>
 
@@ -141,14 +123,7 @@
 					</form>
 				</div>
 				
-					<div class="moitieDroite">
-				<p>
-					<span class="validateUsername"><?php if(isset($error)) { if ($error) { echo $error['msg']; }} ?></span>
-				</p>
-				<p>
-					<span class="validateEmail"><?php if(isset($error)) { if ($error) { echo $error['msg']; }} ?></span>
-				</p>
-				</div>
+				
 				
 				
 				
