@@ -37,7 +37,7 @@
 							<p>
 								<label class="sujet" for="sujet"> Nom : </label>
 							</p>
-							<input type="text" title="Votre nom ne sera jamais communiqu�" class="sujet" name="sujet" />
+							<input type="text" title="Votre nom ne sera jamais communiqué" id="sujet" name="sujet" />
 						</div>
 						
 						<div id="fieldmail">
@@ -52,12 +52,12 @@
 					<p>
 						<label for="contenu"> Sujet : </label>
 					</p>
-					<textarea name="texte" id="contenu" placeholder ="Une question ? Un avis ? Ecrivez ici vos remarques !" ></textarea>
+					<textarea name="texte" id="contenu" placeholder="Une question ? Un avis ? Ecrivez ici vos remarques !" ></textarea>
 					
 					<p>
-					<input type="submit" value="Envoyer"/>
+					<input type="submit" value="Envoyer">
 					</p>
-				
+			</fieldset>	
 		</form>
 		</div>	
 		 

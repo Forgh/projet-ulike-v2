@@ -3,10 +3,10 @@
 <html>
 
 	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
-			<link rel="stylesheet" href="css/dropbox.css" type="text/css"/>
-	 
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+	 <title>Ulike : Résultats de votre recherche</title>
+
 	</head>
 	<body>
 		<?php include("include/entete.php"); ?>
