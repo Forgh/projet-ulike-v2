@@ -59,14 +59,14 @@
 		<?php
 	}else{
 	
-	if ($ret == false and $megacondition == false){
+	//if ($ret == false and $megacondition == false){
 		//ici on trouve la raison et on modifie la page d'inscription
 		
 		foreach($_POST as $key=>$value){
 			$_SESSION['ajout_ent.' . $key] = $value;
 		} 
-		header('Location: '.$SITE_BASE.'inscription.php');
-	}
+		header('Location: '.$SITE_BASE.'erreur_inscription.php');
+	//}
 	}
 	
 	
