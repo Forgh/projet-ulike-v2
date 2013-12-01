@@ -22,6 +22,7 @@ $( "#otherMarks" ).slideDown( "slow", function() {
 		<div id="bodycentered" >
 
 			<h2>Présentation d'un objet</h2>
+			<?php if(isset($_GET(['objet'])){ ?>
 			<?php require('controleurs/statistique_objet.php'); ?>
 			<div class="moitieDroite">	
 				<p><span class="presentationObjetLbl">Nom :</span><?php echo $constructeur_objet;?> - <?php echo $nom_objet; ?></p>
@@ -73,6 +74,11 @@ $( "#otherMarks" ).slideDown( "slow", function() {
 			</div>
 </p>
 <div id="otherMarks"><?php include('controleurs/show_note.php'); ?></div>
+<?php }
+		else {
+			echo '<p>Désolé, il y a une erreur sur cette page, l\'objet n\'existe pour ou une erreur est apparue au chargement de cette page</p>';
+		}
+		?>
 		</div>
 		
 		<?php include("include/footer.php");?>
