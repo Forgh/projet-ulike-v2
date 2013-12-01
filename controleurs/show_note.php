@@ -7,7 +7,6 @@
 
 	$carac_objet=Objet::getObjetById($id);
 
-		echo 'lol';
 		$nom_objet = $carac_objet->getNom();
 	
 		$notes = Note::fetchNotesByObjet($nom_objet);

@@ -8,12 +8,11 @@
 		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 		<title> ULike </title>
-		<script>$(document).ready(function() {
-					var inputField= $('#id_objet').val();
-					$( "#afficher" ).click(function () {
-				   		$( "#otherMarks" ).load( 'controleurs/show_note.php?objet='+inputField );
-				    });
-				    });
+		<script>$( "#userCas" ).click(function() {
+$( "#otherMarks" ).slideDown( "slow", function() {
+// Animation complete.
+});
+});
 </script>
 		
 	</head>
@@ -68,12 +67,11 @@
 	</ul>
 </div>
 			<p>			
-			<form action="" method="post" enctype="multipart/form-data">	
-				<input type="hidden" id="id_objet" value="<?php echo $_GET['objet']; ?>"	>				
-				<input type="submit" id="afficher" value="En voir [+]...">
-			</form>
+			<div class="msgbox_btn_box">
+				<div class="bouton bleu" id="userCas">En voir [+]</div>
+			</div>
 </p>
-<div id="otherMarks"></div>
+<div id="otherMarks"><?php include('controleurs/show_note.php'); ?></div>
 		</div>
 		
 		<?php include("include/footer.php");?>
