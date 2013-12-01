@@ -162,47 +162,5 @@
 		
 	</body>
 	
-	<script>
-		
-	
-	$('#userCas').click( function() {
-		$('#infoUser').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#categorie').slideUp( "slow", function() {
-			
-		// Animation complete.
-		});
-		//$('#categorie').hide();
-	});
-	
-	$('#entrepriseCas').click( function() {
-		$('#infoEntreprise').slideDown( "slow", function() {
-		// Animation complete.
-		});
-		$('#categorie').slideUp( "slow", function() {
-		// Animation complete.
-		});
-		
-		//$('#info').hide();
-	});
 
-	$('#accueil').click( function() {
-		 $( "#bodycentered" ).fadeOut( "slow", function() {
-			// Animation complete.
-			document.location.href="accueil.php";
-			//???
-			$( "#bodycentered" ).fadeIn( "slow", function() {
-			});
-		});
-		
-		//$('#categorie').hide();
-	});
-
-	window.onload = function() {
-		 $( "#bodycentered" ).fadeIn( "slow", function() {
-			// Animation complete.
-		});
-	};
-	</script>
 </html>
