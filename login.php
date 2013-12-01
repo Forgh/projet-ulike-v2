@@ -26,9 +26,54 @@
 			
 		});
 		</script>
+			<script>
+		
+	$(document).ready(function()
+		{
+	$('#userCas').click( function() {
+		$('#infoUser').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#categorie').slideUp( "slow", function() {
+			
+		// Animation complete.
+		});
+		//$('#categorie').hide();
+	});
+	
+	$('#entrepriseCas').click( function() {
+		$('#infoEntreprise').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#categorie').slideUp( "slow", function() {
+		// Animation complete.
+		});
+		
+		//$('#info').hide();
+	});
+
+	$('#accueil').click( function() {
+		 $( "#bodycentered" ).fadeOut( "slow", function() {
+			// Animation complete.
+			document.location.href="accueil.php";
+			//???
+			$( "#bodycentered" ).fadeIn( "slow", function() {
+			});
+		});
+		
+		//$('#categorie').hide();
+	});
+
+	window.onload = function() {
+		 $( "#bodycentered" ).fadeIn( "slow", function() {
+			// Animation complete.
+		});
+	};
+	});
+	</script>
 		<script src="scripts/script_checkform.js"></script>
 
-<title>Ulike : S'enregistrer</title>
+<title>Ulike : Se connecter</title>
 
 
 </head>
@@ -51,8 +96,8 @@
 				<h2>Authentification</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_membre.php" method="post" enctype="multipart/form-data" autocomplete="on">						
-						<label for="pseudonyme_input">Pseudonyme :<span class="obligatoire">*</span></label>
-						<input type="text" id="pseudonyme_input" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
+						<label for="pseudonyme_membre">Pseudonyme :<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudonyme_membre" name="pseudo" title="Votre pseudonyme est le surnom qui est vu par les utilisateur." class="pseudo">
 						
 						
 						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
@@ -81,8 +126,8 @@
 				<h2>Informations confidentielles</h2>
 				<div class="moitieGauche">
 					<form action="controleurs/loguer_entreprise.php" method="post" enctype="multipart/form-data" autocomplete="on">
-						<label for="pseudonyme_input">Nom de l'entreprise:<span class="obligatoire">*</span></label>
-						<input type="text" id="pseudonyme_input" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
+						<label for="pseudonyme_entreprise">Nom de l'entreprise:<span class="obligatoire">*</span></label>
+						<input type="text" id="pseudonyme_entreprise" title="Il s'agit du nom qui affiché sur la description de vos objets et qui vous désigne." required name="pseudo" class="pseudo">
 
 						<label for="passwd">Mot de passe :<span class="obligatoire">*</span></label>
 						<input type="password" title="Ne communiquez jamais votre mot de passe à quiconque." name="passwd" id="passwd" onchange=" this.setCustomValidity(this.validity.patternMismatch ? 'Votre mot de passe doit comporter au moins 1 majuscule, 1 minuscule et un chiffre' : ''); if(this.checkValidity()) form.passwordconfirm.pattern = this.value; ">
