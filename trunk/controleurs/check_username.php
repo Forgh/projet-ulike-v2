@@ -45,11 +45,11 @@ function username_taken($nom){
 	$ok = true;
 	
 	$req = $bdd -> prepare('SELECT *  FROM entreprises WHERE nom_entreprise=?');
-	$req -> execute(array($nom)) or $ok == false; 
+	$req -> execute(array($nom)); 
 	$req2 = $bdd -> prepare('SELECT *  FROM membres WHERE pseudo_membre=?');
-	$req2 -> execute(array($nom)) or $ok == false;
+	$req2 -> execute(array($nom));
 
-	return (($req->rowCount() >= 1) && $ok && ($req2->rowCount() >= 1));
+	return (($req->rowCount() >= 1) || ($req2->rowCount() >= 1));
 }	 
 	 
 if (@$_REQUEST['action'] == 'check_username' && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {

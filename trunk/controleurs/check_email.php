@@ -39,11 +39,11 @@ function email_taken($email){
 	$ok = true;
 	
 	$req = $bdd -> prepare('SELECT *  FROM entreprises WHERE email_entreprise=?');
-	$req -> execute(array($email)) or $ok == false; 
+	$req -> execute(array($email)); 
 	$req2 = $bdd -> prepare('SELECT *  FROM membres WHERE email_membre=?');
-	$req2 -> execute(array($email)) or $ok == false;
+	$req2 -> execute(array($email));
 
-	return (($req->rowCount() >= 1) && $ok && ($req2->rowCount() >= 1));
+	return (($req->rowCount() >= 1) || ($req2->rowCount() >= 1));
 }	
 
 if (@$_REQUEST['action'] == 'check_email' && isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
