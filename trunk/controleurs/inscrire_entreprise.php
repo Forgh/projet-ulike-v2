@@ -14,10 +14,18 @@
 	$regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
 
 	
-	$megacondition = ($nb == false and empty($_POST['pseudo'])==false  and empty($_POST['passwd'])==false and empty($_POST['passwdconfirm'])==false and $_POST['passwd'] == $_POST['passwdconfirm']);// and (preg_match("(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$",$_POST['passwd_ent'] ));
-	$megacondition = $megacondition and empty($_POST['nom_gerant'])==false and empty($_POST['mail_ent'])==false and !preg_match($regex, $_POST['mail']) and empty($_POST['adr_ent'])==false;
-	$megacondition = $megacondition  and empty($_POST['code_ent'])==false and empty($_POST['pays_ent'])==false and !empty($_POST['siren']);
-	
+	$megacondition = ($nb == 0) and !empty($_POST['pseudo']) 
+							and !empty($_POST['passwd'])
+							and !empty($_POST['passwdconfirm'])
+							and $_POST['passwd'] == $_POST['passwdconfirm']
+							and !empty($_POST['nom_gerant'])
+							and !empty($_POST['mail_ent'])
+							and !preg_match($regex, $_POST['mail_ent'])
+							and !empty($_POST['adr_ent'])
+							and !empty($_POST['code_ent'])
+							and !empty($_POST['pays_ent'])
+							and !empty($_POST['siren']);
+
 	if ($megacondition){// on verif que l'objet est nouveau
 		$Ent = new Entreprise($_POST['pseudo'], sha1($_POST['passwd']), $_POST['siren'], $_POST['nom_gerant'], $_POST['adr_ent'], $_POST['code_ent'], $_POST['pays_ent'], $_POST['mail_ent'],0);
 		$ret = $Ent->save();
@@ -36,7 +44,7 @@
 			<head>
 				<meta charset="utf-8">
 				<link rel="stylesheet" href="../css/style.css" type="text/css">
-				<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/ulike/moncompte.php" >
+				<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/ulike/" >
 			</head>
 			<body>
 				
@@ -51,13 +59,14 @@
 		<?php
 	}else{
 	
-	//if ($ret == false and $megacondition == false){
+	if ($ret == false and $megacondition == false){
 		//ici on trouve la raison et on modifie la page d'inscription
 		
 		foreach($_POST as $key=>$value){
 			$_SESSION['ajout_ent.' . $key] = $value;
 		} 
 		header('Location: '.$SITE_BASE.'inscription.php');
+	}
 	}
 	
 	
