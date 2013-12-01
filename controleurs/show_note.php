@@ -1,13 +1,4 @@
 <?php
-	$id=$_GET['objet'];
-	 
-	require('modeles/Objet.php');
-	require('modeles/Note.php');
-	require('modeles/Like.php');
-
-	$carac_objet=Objet::getObjetById($id);
-
-		$nom_objet = $carac_objet->getNom();
 	
 		$notes = Note::fetchNotesByObjet($nom_objet);
 		

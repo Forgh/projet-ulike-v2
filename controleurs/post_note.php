@@ -1,11 +1,13 @@
 <?php
 	session_start();
-	//$_SESSION['login']='Anon';
-	global $bdd;
-	require('../modeles/Note.php');
-	require('../modeles/Like.php');
+	echo 'session';
+	include('../modeles/Note.php');
+	echo 'note';
+	include('../modeles/Like.php');
+	echo 'like';
+
+	$note = new Note($_SESSION['pseudo_membre'],$_POST['commentaire'], );
 	
-	$note = new Note($_SESSION['login'],$_POST['commentaire']);
 	$note->save();
 	
 	$id_auteur = $note->getId();
@@ -20,6 +22,6 @@
 		$dislike->save();
 	}
 	
-	header( 'Location: http://projets-lightdark.fr/ulike/post_ajout_userinput.php');
+	header( 'Location : http://projets-lightdark.fr/ulike/post_ajout_userinput.php');
 
 ?>
