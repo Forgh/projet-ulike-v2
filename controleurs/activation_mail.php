@@ -5,7 +5,8 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css" type="text/css">
-	<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/ulike/" >
+	<meta http-equiv="refresh" content="5; url=http://projets-lightdark.fr/ulike/" >
+	<title> ULike </title>
 </head>
 <body>
 	
