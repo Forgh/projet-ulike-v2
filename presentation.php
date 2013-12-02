@@ -8,11 +8,14 @@
 		<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" >
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 		<title> ULike </title>
-		<script>$( "#userCas" ).click(function() {
-$( "#otherMarks" ).slideDown( "slow", function() {
-// Animation complete.
-});
-});
+		<script>$(document).ready(function()
+		{
+			$( "#userCas" ).click(function() {
+				$( "#otherMarks" ).slideDown( "slow", function() {
+				// Animation complete.
+				});
+			});
+		});
 </script>
 		
 	</head>
