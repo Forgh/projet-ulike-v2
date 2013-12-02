@@ -62,13 +62,14 @@
 			
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
-			
+						$notes = $req-> fetchAll();
+
 			$number_likes=0;
 			if($req->rowCount()!=0){
-				while($nom_note = $req->fetch()){
-					$req2 = $bdd->prepare('SELECT SUM(type_like) FROM likes WHERE origine_like = ? AND type_like=1');
-					$req2 -> execute(array($nom_note));
-					$number_likes+=$req2->fetchColumn();
+				foreach($notes as $nom_note){
+					$req2 = $bdd->prepare('SELECT type_like FROM likes WHERE origine_like = ? AND type_like=1');
+					$req2 -> execute(array($nom_note['id_note']));
+					$number_likes+=$req2->rowCount();
 				}
 			}
 			return $number_likes;
@@ -79,13 +80,14 @@
 
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
-			
+						$notes = $req-> fetchAll();
+
 			$number_likes=0;
 			if($req->rowCount()!=0){
-				while($nom_note = $req->fetch()){
-					$req2 = $bdd->prepare('SELECT COUNT(id_like) FROM likes WHERE origine_like = ? AND type_like=0');
-					$req2 -> execute(array($nom_note));
-					$number_likes+=$req2->fetchColumn();
+				foreach($notes as $nom_note){
+					$req2 = $bdd->prepare('SELECT id_like FROM likes WHERE origine_like = ? AND type_like=0');
+					$req2 -> execute(array($nom_note['id_note']));
+					$number_likes+=$req2->rowCount();
 				}
 			}
 			return $number_likes;
