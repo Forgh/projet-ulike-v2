@@ -10,7 +10,7 @@
 		 
 		 <div class="liste_objet_pair">	
 					
-				<a href="presentation.php?objet=<?php echo $carac_objet['id_objet']; ?>"><img class="liste_objet_picture" src="<?php echo $carac_objet['img_objet']; ?>"  width="64px" height="64px"/></a>
+				<a href="presentation.php?objet=<?php echo $carac_objet['id_objet']; ?>"><img class="liste_objet_picture" src="<?php echo $carac_objet['img_objet']; ?>"  width="64" height="64" alt=""/></a>
 					
 		 		<div class="liste_objet_info">
 						
