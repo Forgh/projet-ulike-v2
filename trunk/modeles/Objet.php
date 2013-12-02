@@ -66,8 +66,25 @@
 			
 			return new Objet($tuple['nom_objet'], $tuple['nom_proprietaire'], $tuple['categorie_objet'], $tuple['description_objet'], $tuple['img_objet']);
 		}
+		
+		public static function getObjetParProprio($nom){
+			global $bdd;
+			$req = $bdd -> prepare('SELECT * FROM objets WHERE nom_proprietaire=?');
+			$req -> execute(array($nom));
+			
+			return $req->fetchAll();
+		}
 
-
+		public static function deleteById($id, $pseudo){
+			global $bdd;
+			$req = $bdd -> prepare('SELECT * FROM objets WHERE id_objet=?');
+			$req -> execute(array($id));
+			$caracs = $req->fetch();
+			if($caracs['nom_proprietaire']==$pseudo) {
+				$req = $bdd -> prepare('DELETE FROM objets WHERE id_objet=?');
+				$req -> execute(array($id));
+			}
+		}
 		public function getObjetById($id) {
 			global $bdd;
 			$req = $bdd -> prepare('SELECT * FROM objets WHERE id_objet=?');

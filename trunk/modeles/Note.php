@@ -54,6 +54,25 @@
 			return $req->fetchAll();
 		}
 		
+		public static function getNotesParAuteur($nom){
+			global $bdd;
+			$req = $bdd -> prepare('SELECT * FROM notes WHERE pseudo_auteur=?');
+			$req -> execute(array($nom));
+			
+			return $req->fetchAll();
+		}
+		
+		public static function deleteById($id, $pseudo){
+			global $bdd;
+			$req = $bdd -> prepare('SELECT * FROM notes WHERE id_note=?');
+			$req -> execute(array($id));
+			$caracs = $req->fetch();
+			if($caracs['pseudo_auteur']==$pseudo) {
+				$req = $bdd -> prepare('DELETE FROM notes WHERE id_note=?');
+				$req -> execute(array($id));
+			}
+		}
+
 		public function existeNotesByObjetAndPseudo($nom,$pseudo){
 			global $bdd;
 			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? AND pseudo_auteur = ?');
