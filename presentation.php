@@ -39,8 +39,8 @@ $( "#otherMarks" ).slideDown( "slow", function() {
 			<div class="moitieGauche border">	
 				<img class="photoObjet" src="<?php echo $img_objet; ?>" alt="<?php echo $nom_objet; ?>" width='256' height='256' />			
 			</div>
-			<div id="zoneenregistre">
-	<ul id="zonelike">
+			<div id="zonelistes">
+	<ul id="listelikes">
 		<?php 
 			if($total_ergonomie>0){
 				?><li><img src="imgs/ergo.png" alt="On aime : l'ergonomie"/></li><?php
@@ -53,7 +53,7 @@ $( "#otherMarks" ).slideDown( "slow", function() {
 			}
 		?>
 	</ul>
-	<ul id="zonedislike">
+	<ul id="listedislikes">
 		<?php 
 			if($total_ergonomie<0){
 				?><li><img src="imgs/ergo.png" alt="On n'aime pas : l'ergonomie"/></li><?php

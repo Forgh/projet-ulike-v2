@@ -165,6 +165,56 @@ div.msgbox .bouton{
 	margin-bottom: 10px;
 } 
 
+ul#listelikes, ul#listedislikes{
+  list-style:none;
+  width: 40%;
+    padding:20px;
+  padding-bottom:0;
+  border-radius:3px;
+  border-style:solid;
+  border-width:1px;
+  position: relative;
+  min-height: 351px;
+}
+
+ul#listelikes{
+	border-right-color:green;
+	border-top-color:green;
+
+	float:left;
+
+}
+
+ul#listedislikes{
+	border-left-color:red;
+	border-top-color:red;
+	float:right;
+}
+
+/* style des �l�ments de la liste */
+ul#listelikes li, ul#listedislikes li{
+  cursor:move;
+  height:75px;
+  width:150px;
+    margin-right:20px;
+    margin-bottom:20px;
+  background:#fff;
+  color:#212326;
+  -moz-box-shadow:2px 2px 5px #ccc;
+}
+
+
+#listelikes li {
+	float : right;
+}
+
+#listedislikes li {
+	float : left;
+}
+
+#zonelistes {
+	max-width:100%;
+}
 
 
 
