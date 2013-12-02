@@ -209,6 +209,7 @@ ul#listelikes li, ul#listedislikes li{
 
 #zonelistes {
 	max-width:100%;
+	background-image:url('design/panel.png');
 }
 
 
