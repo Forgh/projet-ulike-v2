@@ -51,7 +51,51 @@
 		 
 		//$('#info').hide();
 	});
-
+	
+	$('#supprobjet_btn').click( function() {
+		$('#accueil').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#supprobjet').slideUp( "slow", function() {
+			
+		// Animation complete.
+		});
+		//$('#categorie').hide();
+	});
+	
+	$('#accueil2supprobjet').click( function() {
+		$('#supprobjet').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#accueil').slideUp( "slow", function() {
+		// Animation complete.
+		});
+		 
+		//$('#info').hide();
+	});
+	
+	$('#supprnote_btn').click( function() {
+		$('#accueil').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#supprnote').slideUp( "slow", function() {
+			
+		// Animation complete.
+		});
+		//$('#categorie').hide();
+	});
+	
+		$('#accueil2supprnote').click( function() {
+		$('#supprnote').slideDown( "slow", function() {
+		// Animation complete.
+		});
+		$('#accueil').slideUp( "slow", function() {
+		// Animation complete.
+		});
+		 
+		//$('#info').hide();
+	});
+	
 	$('#ajout_objet').click( function() {
 		$( "#bodycentered" ).fadeOut( "slow", function() {
 			// Animation complete.
@@ -84,7 +128,16 @@
 				<h2>Mon compte - <?php echo $_SESSION['pseudo_membre']; ?></h2>
 				<p>Dans cet espace membre vous pouvez modifier vos informations personnelles.</p>
 				<div class="bouton bleu" id="accueil2modif_btn">Modifier</div>
+				<p>Supprimer des notes:</p>
+				<div class="bouton bleu" id="accueil2supprnote">Supprimer notes</div>
 			</div>
+				<div id="supprnote">
+					<div class="bouton bleu" id="supprnote_btn">Retour</div>
+					<form action="post_suppr_note.php" method="post" enctype="multipart/form-data">
+						<?php include('controleurs/checkboxes_notes.php'); ?>
+						<input type="submit" value="Supprimer">
+					</form>
+				</div>
 			<div id="modifs">
 				<h2>Mon compte - <?php echo $_SESSION['pseudo_membre']; ?></h2>
 				<div class="moitieGauche">
@@ -152,7 +205,16 @@
 				<div class="bouton bleu" id="accueil2modif_btn">Modifier</div>
 				<p>Ajouter un objet:</p>
 				<div class="bouton bleu" id="ajout_objet">Ajouter objet</div>
+				<p>Supprimer des objets:</p>
+				<div class="bouton bleu" id="accueil2supprobjet">Supprimer objets</div>
 			</div>
+				<div id="supprobjet">
+					<div class="bouton bleu" id="supprobjet_btn">Retour</div>
+					<form action="post_suppr_objet.php" method="post" enctype="multipart/form-data">
+						<?php include('controleurs/checkboxes_objets.php'); ?>
+						<input type="submit" value="Supprimer">
+					</form>
+				</div>
 			<div id="modifs">
 				<h2>Mon compte - <?php echo $_SESSION['login_entreprise']; ?></h2>
 				
