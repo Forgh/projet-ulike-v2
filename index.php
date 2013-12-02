@@ -21,7 +21,7 @@
 			<?php require_once("controleurs/highlight_objet.php"); ?>
 			
 				<div class="accueilGauche">
-					<img src="<?php echo $img_objet; ?>" width="150" height="150" alt="<?php echo $nom_objet; ?>"/>
+					<a href="presentation.php?objet=<?php echo $idObjet; ?>"><img src="<?php echo $img_objet; ?>" width="150" height="150" alt="<?php echo $nom_objet; ?>"/></a>
 				</div>
 				
 				<div class="liste_objet_vote">

@@ -99,6 +99,14 @@
 
 		}
 		
+		public function getIdByNom($id) {
+			global $bdd;
+			$req = $bdd -> prepare('SELECT * FROM objets WHERE nom_objet = ?');
+			$req->execute(array($id));
+			
+			return $req->fetchAll();
+		}
+		
 		public function getLastInsertedObjet() {
 			global $bdd;
 			$req = $bdd -> query('SELECT * FROM objets WHERE id_objet = (SELECT MAX(id_objet) FROM objets)');

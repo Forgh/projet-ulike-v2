@@ -10,6 +10,9 @@
 	$description_objet = $carac_objet->getDescription();
 	$constructeur_objet = $carac_objet->getProprietaire();
 	$img_objet = $carac_objet->getImg();
+	
+	$Objetbyid= Objet::getIdByNom($nom_objet);
+	$idObjet = $Objetbyid['id_objet'];
 	//Récupération de TOUS les likes/dislikes
 	$number_likes= Like::getNumberOfLikes($nom_objet);
 	$number_dislikes = Like::getNumberOfDislikes($nom_objet);
