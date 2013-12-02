@@ -4,8 +4,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="5;url=http://projets-lightdark.fr/ulike/login.php" >
+	<meta http-equiv="refresh" content="5; url=http://projets-lightdark.fr/ulike/login.php" >
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<title> ULike </title>
 </head>
 <body>
 	
