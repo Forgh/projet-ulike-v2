@@ -108,6 +108,10 @@ footer #copyright{
 	text-align:left;
 }
 
+#otherMarks{
+	display:none;
+}
+
 div.bodycentered_line{
 	clear: both;
 	display: block;
