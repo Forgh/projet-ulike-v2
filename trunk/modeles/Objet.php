@@ -104,7 +104,7 @@
 			$req = $bdd -> prepare('SELECT * FROM objets WHERE nom_objet = ?');
 			$req->execute(array($id));
 			
-			return $req->fetchAll();
+			return $req->fetch();
 		}
 		
 		public function getLastInsertedObjet() {
