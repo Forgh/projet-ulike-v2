@@ -15,13 +15,13 @@
 						<p><span class="presentationObjetLbl"><?php echo $value['pseudo_auteur']; ?></span></p>
 						<p><span class="presentationObjetLbl">J'aime :
 							</span><?php foreach($likes as $contenu_likes) {
-											echo $contenu_likes['contenu_like']+", ";
+											echo $contenu_likes['contenu_like'].', ';
 							} ?></p>
 						<p><span class="presentationObjetLbl">Je n'aime pas :
 							</span><?php foreach($dislikes as $contenu_dislikes) {
-											echo $contenu_dislikes['contenu_like']+", ";
+											echo $contenu_dislikes['contenu_like'].', ';
 							} ?></p>
-						<p><span class="presentationObjetLbl">Commentaire:</span><?php echo $value['commentaire']; ?></p>
+						<p><span class="presentationObjetLbl">Commentaire : </span><?php echo $value['commentaire']; ?></p>
 								
 					</div>
 						
