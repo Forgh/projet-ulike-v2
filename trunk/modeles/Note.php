@@ -22,18 +22,18 @@
 		
 		public function getId(){
 			global $bdd;
-			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes") or die("Erreur => MAX Note.construct($id)");
+			$idmax=$bdd->query("SELECT MAX(id_note) FROM notes");
 			$result = $idmax -> fetch();
 			$ret = $result[0];
 			return $ret;
 		}
 
 		public function __construct ($pseudo, $commentaire, $objet) {
-            global $bdd;
-            $this->pseudo = $pseudo;
-            $this->commentaire = $commentaire;
-            $this->objet = $objet;
-        }
+				 
+			$this->pseudo = $pseudo;
+			$this->commentaire = $commentaire;
+			$this->objet = $objet;
+		}
 
 		public function save() {
 				global $bdd;
@@ -54,14 +54,6 @@
 			return $req->fetchAll();
 		}
 		
-		public static function getNotesParAuteur($nom){
-			global $bdd;
-			$req = $bdd -> prepare('SELECT * FROM notes WHERE pseudo_auteur=?');
-			$req -> execute(array($nom));
-			
-			return $req->fetchAll();
-		}
-		
 		public static function deleteById($id, $pseudo){
 			global $bdd;
 			$req = $bdd -> prepare('SELECT * FROM notes WHERE id_note=?');
@@ -72,7 +64,7 @@
 				$req -> execute(array($id));
 			}
 		}
-
+		
 		public function existeNotesByObjetAndPseudo($nom,$pseudo){
 			global $bdd;
 			$req = $bdd->prepare('SELECT * FROM notes WHERE nom_objet_source = ? AND pseudo_auteur = ?');
