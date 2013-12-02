@@ -96,12 +96,14 @@
 
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
+			$notes = $req-> fetchAll();
 			
 			$number_likes=0;
-			if($req->rowCount()!=0){
-				while($nom_note = $req->fetch()){
+			
+			if(count($notes)!=0){
+				foreach($notes as $nom_note){
 					$req2 = $bdd->prepare('SELECT id_like FROM likes WHERE origine_like = ? AND type_like=1 AND contenu_like = ?');
-					$req2 -> execute(array($nom_note, $categorie));
+					$req2 -> execute(array($nom_note['id_note'], $categorie));
 					$number_likes+=$req2->rowCount();
 				}
 			}
@@ -113,12 +115,14 @@
 
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
-			
+			$notes = $req-> fetchAll();
+
 			$number_likes=0;
-			if($req->rowCount()!=0){
-				while($nom_note = $req->fetch()){
+			if(count($notes)!=0){
+				foreach($notes as $nom_note){
+
 					$req2 = $bdd->prepare('SELECT id_like FROM likes WHERE origine_like = ? AND type_like=0 AND contenu_like = ?');
-					$req2 -> execute(array($nom_note, $categorie));
+					$req2 -> execute(array($nom_note['id_note'], $categorie));
 					$number_likes+=$req2->rowCount();
 				}
 			}
