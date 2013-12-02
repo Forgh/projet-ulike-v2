@@ -61,7 +61,7 @@ engine=innodb CHARACTER SET UTF8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE likes (
 id_like int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-contenu_like varchar(10) NOT NULL,
+contenu_like varchar(25) NOT NULL,
 origine_like int(6) UNSIGNED NOT NULL,
 type_like TINYINT(1),
 CONSTRAINT pk_likes PRIMARY KEY (id_like),
