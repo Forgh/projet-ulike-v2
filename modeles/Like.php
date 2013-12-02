@@ -97,15 +97,16 @@
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
 			
-			$number_likes=0;
+			$number_likes=array();
 			if($req->rowCount()!=0){
 				while($nom_note = $req->fetch()){
-					$req2 = $bdd->prepare('SELECT COUNT(id_like) FROM likes WHERE origine_like = ? AND type_like=1 AND contenu_like = ?');
+					$req2 = $bdd->prepare('SELECT id_like FROM likes WHERE origine_like = ? AND type_like=1 AND contenu_like = ?');
 					$req2 -> execute(array($nom_note, $categorie));
-					$number_likes+=$req2->fetchColumn();
+					$new_stack=$req2->fetchAll();
+					array_push($number_likes,$new_stack);
 				}
 			}
-			return $number_likes;
+			return (count($number_likes);
 		}
 
 		public function getDislikesForCategory($nom, $categorie){
@@ -114,15 +115,16 @@
 			$req= $bdd->prepare('SELECT id_note FROM notes WHERE nom_objet_source=?');
 			$req-> execute(array($nom));
 			
-			$number_likes=0;
+			$number_likes=array();
 			if($req->rowCount()!=0){
 				while($nom_note = $req->fetch()){
-					$req2 = $bdd->prepare('SELECT COUNT(id_like) FROM likes WHERE origine_like = ? AND type_like=0 AND contenu_like = ?');
+					$req2 = $bdd->prepare('SELECT id_like FROM likes WHERE origine_like = ? AND type_like=0 AND contenu_like = ?');
 					$req2 -> execute(array($nom_note, $categorie));
-					$number_likes+=$req2->fetchColumn();
+					$new_stack=$req2->fetchAll();
+					array_push($number_likes,$new_stack);
 				}
 			}
-			return $number_likes;
+			return (count($number_likes);
 		} 
 	}
 	
