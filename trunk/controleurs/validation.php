@@ -5,6 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<title> ULike </title>
 </head>
 <body>
 	
@@ -22,7 +23,7 @@
 		<form  class="formulaire" method="POST" enctype="multipart/form-data" <?php echo 'action="../controleurs/activation_mail.php?id=' . $param.'"'; ?>  >
 			<p>
 				<label for="login_validation">Pseudo ou nom du gérant:</label>
-				<input type="text" name="login_validation" >
+				<input type="text" id="login_validation" name="login_validation" >
 			</p>
 			
 			<input type="submit" value="Activer le compte">
